@@ -2,9 +2,10 @@
   "profiles": {
     "R4Mvc.Tools": {
       "commandName": "Project",
-      "commandLineArgs": "",
-      "commandLineArgs_aspNetSimple": "generate -p \"..\\..\\..\\..\\..\\samples\\AspNetSimple\\AspNetSimple.csproj\"",
-      "commandLineArgs_aspNetFeatureFolders": "generate -p \"..\\..\\..\\..\\..\\samples\\AspNetFeatureFolders\\AspNetFeatureFolders.csproj\""
+      "commandLineArgs": "generate",
+      "workingDirectory": "D:\\src\\apps_core\\css\\webapp\\LSIWebCore",
+      "commandLineArgs_aspNetFeatureFolders": "generate -p \"..\\..\\..\\..\\..\\samples\\AspNetFeatureFolders\\AspNetFeatureFolders.csproj\"",
+      "commandLineArgs_aspNetSimple": "generate -p \"..\\..\\..\\..\\..\\samples\\AspNetSimple\\AspNetSimple.csproj\""
     }
   }
 }

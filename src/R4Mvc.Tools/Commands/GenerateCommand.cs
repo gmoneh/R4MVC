@@ -68,8 +68,10 @@ project-path:
                         if (diag.Kind == Microsoft.CodeAnalysis.WorkspaceDiagnosticKind.Failure)
                             foundErrors = true;
                     }
+                    /* Even if there are errors, do not fail... let's generate what we can
                     if (foundErrors)
                         return;
+                        */
                 }
 
                 // Prep the project Compilation object, and process the Controller public methods list

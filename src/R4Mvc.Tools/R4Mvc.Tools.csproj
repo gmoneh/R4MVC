@@ -26,6 +26,7 @@
 ! Now working with multi-targeted projects (#66)
 + Now available as a dotnet cli tool (see R4Mvc.Tools.Cli package)
     </PackageReleaseNotes>
+    <Version>1.0.0-beta-0505</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">

@@ -22,6 +22,7 @@
     <PackageReleaseNotes>
 + R4MvcExclude attribute now supports actions
     </PackageReleaseNotes>
+    <Version>1.0.0-beta-0505</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">

@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Continue'
 
 Register-TabExpansion Generate-R4MVC @{
     Project = { GetProjects }
