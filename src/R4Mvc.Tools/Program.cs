@@ -21,35 +21,50 @@ namespace R4Mvc.Tools
             Console.WriteLine($"  R4Mvc Generator Tool v{GetVersion()}");
             Console.WriteLine();
 
-            var commandLineConfig = BuildCommandLineConfig(ref args);
-
-            var commands = CommandResolver.GetCommands();
-            ICommand command = null;
-            if (args.Length > 0)
+            try
             {
-                command = commands.FirstOrDefault(c => c.Key.Equals(args[0], StringComparison.OrdinalIgnoreCase));
-                if (command != null)
-                    RemoveItem(ref args, 0);
-            }
-            if (command == null)
-                command = commands.OfType<HelpCommand>().First();
+                var commandLineConfig = BuildCommandLineConfig(ref args);
 
-            string projectPath = null;
-            if (!command.IsGlobal)
+                var commands = CommandResolver.GetCommands();
+                ICommand command = null;
+                if (args.Length > 0)
+                {
+                    command = commands.FirstOrDefault(c => c.Key.Equals(args[0], StringComparison.OrdinalIgnoreCase));
+                    if (command != null)
+                        RemoveItem(ref args, 0);
+                }
+                if (command == null)
+                    command = commands.OfType<HelpCommand>().First();
+
+                string projectPath = null;
+                if (!command.IsGlobal)
+                {
+                    projectPath = GetProjectPath(commandLineConfig);
+                    if (projectPath == null)
+                        return;
+                }
+                var configuration = LoadConfiguration(projectPath, commandLineConfig);
+
+                var services = new ServiceCollection();
+                ConfigureServices(services, configuration);
+
+                var serviceProvider = services.BuildServiceProvider();
+
+                var commandRunner = serviceProvider.GetService(command.GetCommandType()) as ICommandRunner;
+                await commandRunner.Run(projectPath, configuration, args);
+            }
+            catch (ReflectionTypeLoadException rex)
             {
-                projectPath = GetProjectPath(commandLineConfig);
-                if (projectPath == null)
-                    return;
+                Console.Error.WriteLine(rex.ToString());
+
+                if (rex.LoaderExceptions != null)
+                {
+                    foreach (var ex in rex.LoaderExceptions)
+                    {
+                        Console.Error.WriteLine(ex.ToString());
+                    }
+                }
             }
-            var configuration = LoadConfiguration(projectPath, commandLineConfig);
-
-            var services = new ServiceCollection();
-            ConfigureServices(services, configuration);
-
-            var serviceProvider = services.BuildServiceProvider();
-
-            var commandRunner = serviceProvider.GetService(command.GetCommandType()) as ICommandRunner;
-            await commandRunner.Run(projectPath, configuration, args);
         }
 
         internal static string GetVersion()
