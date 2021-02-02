@@ -11,6 +11,7 @@ using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Routing;
 using R4Mvc;
 using AspNetSimple;
@@ -23,7 +24,19 @@ public static partial class MVC
     public static readonly AspNetSimple.Controllers.HomeController Home = new AspNetSimple.Controllers.R4MVC_HomeController();
     public static readonly AspNetSimple.Controllers.SecureController Secure = new AspNetSimple.Controllers.R4MVC_SecureController();
     public static readonly AspNetSimple.Controllers.TestsController Tests = new AspNetSimple.Controllers.R4MVC_TestsController();
+    public static readonly AspNetSimple.Controllers.WebApiController WebApi = new AspNetSimple.Controllers.R4MVC_WebApiController();
     public static readonly R4Mvc.SharedController Shared = new R4Mvc.SharedController();
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+public static partial class MVCPages
+{
+    static readonly R4Mvc.CategoriesPathClass s_Categories = new R4Mvc.CategoriesPathClass();
+    public static R4Mvc.CategoriesPathClass Categories => s_Categories;
+    static readonly R4Mvc.NoDirectChildPagesPathClass s_NoDirectChildPages = new R4Mvc.NoDirectChildPagesPathClass();
+    public static R4Mvc.NoDirectChildPagesPathClass NoDirectChildPages => s_NoDirectChildPages;
+    public static readonly AspNetSimple.Pages.DefaultModel Default = new AspNetSimple.Pages.R4MVC_DefaultModel();
+    public static readonly R4Mvc.NoModelModel NoModel = new R4Mvc.NoModelModel();
 }
 
 namespace R4Mvc
@@ -68,6 +81,41 @@ namespace R4Mvc
         public readonly AspNetSimple.Areas.Members.Controllers.ManualAreaController ManualArea = new AspNetSimple.Areas.Members.Controllers.R4MVC_ManualAreaController();
         public readonly AspNetSimple.Areas.Members.Controllers.SecureController Secure = new AspNetSimple.Areas.Members.Controllers.R4MVC_SecureController();
         public readonly AspNetSimple.Areas.Members.Controllers.TestsController Tests = new AspNetSimple.Areas.Members.Controllers.R4MVC_TestsController();
+    }
+
+    [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+    public partial class CategoriesPathClass
+    {
+        public readonly AspNetSimple.Pages.Categories.DetailsModel Details = new AspNetSimple.Pages.Categories.R4MVC_DetailsModel();
+        public readonly R4Mvc.Categories_NoModelModel NoModel = new R4Mvc.Categories_NoModelModel();
+        static readonly R4Mvc.Categories_InnerPathClass s_Inner = new R4Mvc.Categories_InnerPathClass();
+        public R4Mvc.Categories_InnerPathClass Inner => s_Inner;
+    }
+
+    [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+    public partial class Categories_InnerPathClass
+    {
+        public readonly R4Mvc.Categories_Inner_NoModelModel NoModel = new R4Mvc.Categories_Inner_NoModelModel();
+    }
+
+    [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+    public partial class NoDirectChildPagesPathClass
+    {
+        static readonly R4Mvc.NoDirectChildPages_AnotherEmptyLayerPathClass s_AnotherEmptyLayer = new R4Mvc.NoDirectChildPages_AnotherEmptyLayerPathClass();
+        public R4Mvc.NoDirectChildPages_AnotherEmptyLayerPathClass AnotherEmptyLayer => s_AnotherEmptyLayer;
+    }
+
+    [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+    public partial class NoDirectChildPages_AnotherEmptyLayerPathClass
+    {
+        static readonly R4Mvc.NoDirectChildPages_AnotherEmptyLayer_NestedPagesPathClass s_NestedPages = new R4Mvc.NoDirectChildPages_AnotherEmptyLayer_NestedPagesPathClass();
+        public R4Mvc.NoDirectChildPages_AnotherEmptyLayer_NestedPagesPathClass NestedPages => s_NestedPages;
+    }
+
+    [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+    public partial class NoDirectChildPages_AnotherEmptyLayer_NestedPagesPathClass
+    {
+        public readonly R4Mvc.NoDirectChildPages_AnotherEmptyLayer_NestedPages_IndexModel Index = new R4Mvc.NoDirectChildPages_AnotherEmptyLayer_NestedPages_IndexModel();
     }
 }
 
@@ -486,6 +534,237 @@ internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RedirectToRouteResult : Re
     }
 
     public string Action
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_ActionResult : ActionResult, IR4PageActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_ActionResult(string pageName, string pageHandler, string protocol = null)
+    {
+        this.InitMVCT4Result(pageName, pageHandler, protocol);
+    }
+
+    public string PageName
+    {
+        get;
+        set;
+    }
+
+    public string PageHandler
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_JsonResult : JsonResult, IR4PageActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_JsonResult(string pageName, string pageHandler, string protocol = null): base(null)
+    {
+        this.InitMVCT4Result(pageName, pageHandler, protocol);
+    }
+
+    public string PageName
+    {
+        get;
+        set;
+    }
+
+    public string PageHandler
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_ContentResult : ContentResult, IR4MvcActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_ContentResult(string area, string controller, string action, string protocol = null)
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+
+    public string Controller
+    {
+        get;
+        set;
+    }
+
+    public string Action
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_FileResult : FileResult, IR4PageActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_FileResult(string pageName, string pageHandler, string protocol = null): base(null)
+    {
+        this.InitMVCT4Result(pageName, pageHandler, protocol);
+    }
+
+    public string PageName
+    {
+        get;
+        set;
+    }
+
+    public string PageHandler
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_RedirectResult : RedirectResult, IR4PageActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_RedirectResult(string pageName, string pageHandler, string protocol = null): base(" ")
+    {
+        this.InitMVCT4Result(pageName, pageHandler, protocol);
+    }
+
+    public string PageName
+    {
+        get;
+        set;
+    }
+
+    public string PageHandler
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_RedirectToActionResult : RedirectToActionResult, IR4PageActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_RedirectToActionResult(string pageName, string pageHandler, string protocol = null): base(" ", " ", " ")
+    {
+        this.InitMVCT4Result(pageName, pageHandler, protocol);
+    }
+
+    public string PageName
+    {
+        get;
+        set;
+    }
+
+    public string PageHandler
+    {
+        get;
+        set;
+    }
+
+    public string Protocol
+    {
+        get;
+        set;
+    }
+
+    public RouteValueDictionary RouteValueDictionary
+    {
+        get;
+        set;
+    }
+}
+
+[GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+internal partial class R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_RedirectToRouteResult : RedirectToRouteResult, IR4PageActionResult
+{
+    public R4Mvc_Microsoft_AspNetCore_Mvc_RazorPages_RedirectToRouteResult(string pageName, string pageHandler, string protocol = null): base(null)
+    {
+        this.InitMVCT4Result(pageName, pageHandler, protocol);
+    }
+
+    public string PageName
+    {
+        get;
+        set;
+    }
+
+    public string PageHandler
     {
         get;
         set;
