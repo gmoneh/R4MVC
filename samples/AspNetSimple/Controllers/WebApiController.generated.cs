@@ -105,9 +105,23 @@ namespace AspNetSimple.Controllers
 
         [NonAction]
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public virtual IActionResult ApiCallTypedWithPrefixedParams()
+        {
+            return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.ApiCallTypedWithPrefixedParams);
+        }
+
+        [NonAction]
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         public virtual IActionResult TaskApiCallTypedWithParams()
         {
             return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.TaskApiCallTypedWithParams);
+        }
+
+        [NonAction]
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public virtual IActionResult TaskApiCallTypedWithPrefixedParams()
+        {
+            return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.TaskApiCallTypedWithPrefixedParams);
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -131,8 +145,10 @@ namespace AspNetSimple.Controllers
             public readonly string TaskApiCallWithParams = "TaskApiCallWithParams";
             public readonly string ApiCallTyped = "ApiCallTyped";
             public readonly string ApiCallTypedWithParams = "ApiCallTypedWithParams";
+            public readonly string ApiCallTypedWithPrefixedParams = "ApiCallTypedWithPrefixedParams";
             public readonly string TaskApiCallTyped = "TaskApiCallTyped";
             public readonly string TaskApiCallTypedWithParams = "TaskApiCallTypedWithParams";
+            public readonly string TaskApiCallTypedWithPrefixedParams = "TaskApiCallTypedWithPrefixedParams";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -144,8 +160,70 @@ namespace AspNetSimple.Controllers
             public const string TaskApiCallWithParams = "TaskApiCallWithParams";
             public const string ApiCallTyped = "ApiCallTyped";
             public const string ApiCallTypedWithParams = "ApiCallTypedWithParams";
+            public const string ApiCallTypedWithPrefixedParams = "ApiCallTypedWithPrefixedParams";
             public const string TaskApiCallTyped = "TaskApiCallTyped";
             public const string TaskApiCallTypedWithParams = "TaskApiCallTypedWithParams";
+            public const string TaskApiCallTypedWithPrefixedParams = "TaskApiCallTypedWithPrefixedParams";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_ApiCallWithParams s_ApiCallWithParamsParams = new ActionParamsClass_ApiCallWithParams();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ApiCallWithParams ApiCallWithParamsParams => s_ApiCallWithParamsParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ApiCallWithParams
+        {
+            public readonly string id = "id";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_TaskApiCallWithParams s_TaskApiCallWithParamsParams = new ActionParamsClass_TaskApiCallWithParams();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_TaskApiCallWithParams TaskApiCallWithParamsParams => s_TaskApiCallWithParamsParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_TaskApiCallWithParams
+        {
+            public readonly string id = "id";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_ApiCallTypedWithParams s_ApiCallTypedWithParamsParams = new ActionParamsClass_ApiCallTypedWithParams();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ApiCallTypedWithParams ApiCallTypedWithParamsParams => s_ApiCallTypedWithParamsParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ApiCallTypedWithParams
+        {
+            public readonly string id = "id";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_ApiCallTypedWithPrefixedParams s_ApiCallTypedWithPrefixedParamsParams = new ActionParamsClass_ApiCallTypedWithPrefixedParams();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ApiCallTypedWithPrefixedParams ApiCallTypedWithPrefixedParamsParams => s_ApiCallTypedWithPrefixedParamsParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ApiCallTypedWithPrefixedParams
+        {
+            public readonly string id = "foo";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_TaskApiCallTypedWithParams s_TaskApiCallTypedWithParamsParams = new ActionParamsClass_TaskApiCallTypedWithParams();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_TaskApiCallTypedWithParams TaskApiCallTypedWithParamsParams => s_TaskApiCallTypedWithParamsParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_TaskApiCallTypedWithParams
+        {
+            public readonly string id = "id";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_TaskApiCallTypedWithPrefixedParams s_TaskApiCallTypedWithPrefixedParamsParams = new ActionParamsClass_TaskApiCallTypedWithPrefixedParams();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_TaskApiCallTypedWithPrefixedParams TaskApiCallTypedWithPrefixedParamsParams => s_TaskApiCallTypedWithPrefixedParamsParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_TaskApiCallTypedWithPrefixedParams
+        {
+            public readonly string id = "foo";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -193,6 +271,17 @@ namespace AspNetSimple.Controllers
         }
 
         [NonAction]
+        partial void ApiCallTypedWithPrefixedParamsOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo, int id);
+        [NonAction]
+        public override Microsoft.AspNetCore.Mvc.ActionResult<AspNetSimple.Models.Product> ApiCallTypedWithPrefixedParams(int id)
+        {
+            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.ApiCallTypedWithPrefixedParams);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "foo", id);
+            ApiCallTypedWithPrefixedParamsOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
         partial void TaskApiCallTypedOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo);
         [NonAction]
         public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<AspNetSimple.Models.Product>> TaskApiCallTyped()
@@ -210,6 +299,17 @@ namespace AspNetSimple.Controllers
             var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.TaskApiCallTypedWithParams);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             TaskApiCallTypedWithParamsOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult<Microsoft.AspNetCore.Mvc.ActionResult<AspNetSimple.Models.Product>>(callInfo);
+        }
+
+        [NonAction]
+        partial void TaskApiCallTypedWithPrefixedParamsOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo, int id);
+        [NonAction]
+        public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<AspNetSimple.Models.Product>> TaskApiCallTypedWithPrefixedParams(int id)
+        {
+            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.TaskApiCallTypedWithPrefixedParams);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "foo", id);
+            TaskApiCallTypedWithPrefixedParamsOverride(callInfo, id);
             return System.Threading.Tasks.Task.FromResult<Microsoft.AspNetCore.Mvc.ActionResult<AspNetSimple.Models.Product>>(callInfo);
         }
     }
