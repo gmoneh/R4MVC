@@ -4,22 +4,18 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsR4MvcBuild) == ''">
-    <TargetFrameworks>net462;netcoreapp2.1</TargetFrameworks>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsR4MvcBuild) != ''">
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup Condition="$(TargetFramework) == 'netcoreapp2.1'">
+  <ItemGroup Condition="$(TargetFramework) == 'netcoreapp3.1'">
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup Condition="$(TargetFramework) == 'net462'">
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.CookiePolicy" Version="2.1.14" />
-    <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.1.1"/>
+    <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
   </ItemGroup>
