@@ -76,7 +76,9 @@ project-path:
                     var foundErrors = false;
                     foreach (var diag in workspace.Diagnostics)
                     {
-                        if (diag.Kind == WorkspaceDiagnosticKind.Failure)
+                        // Even if the load comes with errors on the F# projects, we'll let those go, as that
+                        // shouldn't impact the code generation.
+                        if (diag.Kind == WorkspaceDiagnosticKind.Failure && !diag.Message.Contains("fsproj"))
                         {
                             Console.Error.WriteLine($"  {diag.Kind}: {diag.Message}");
                             foundErrors = true;
