@@ -78,7 +78,7 @@ project-path:
                     {
                         // Even if the load comes with errors on the F# projects, we'll let those go, as that
                         // shouldn't impact the code generation.
-                        if (diag.Kind == WorkspaceDiagnosticKind.Failure && !diag.Message.Contains("fsproj"))
+                        if (diag.Kind == WorkspaceDiagnosticKind.Failure && !(diag.Message.Contains("fsproj") || diag.Message.Contains("package version")))
                         {
                             Console.Error.WriteLine($"  {diag.Kind}: {diag.Message}");
                             foundErrors = true;
