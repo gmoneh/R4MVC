@@ -45,8 +45,10 @@ namespace R4Mvc.Tools.Services
                 // save the controller nodes from each visit to pass to the generator
                 foreach (var controllerNode in controllerRewriter.MvcControllerClassNodes)
                 {
-                    var cNamespace = controllerNode.FirstAncestorOrSelf<NamespaceDeclarationSyntax>().Name.ToFullString().Trim();
+                    // This way of getting the containing namespace does not support the new one line namespace declaration syntax
+                    // var cNamespace = controllerNode.FirstAncestorOrSelf<NamespaceDeclarationSyntax>().Name.ToFullString().Trim();
                     var cSymbol = compiler.GetSemanticModel(tree).GetDeclaredSymbol(controllerNode);
+                    var cNamespace = cSymbol.ContainingNamespace.ToString();
                     var cFullName = cNamespace + "." + cSymbol.Name;
                     if (controllers.ContainsKey(cFullName))
                     {
