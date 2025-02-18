@@ -3,7 +3,7 @@
     "R4Mvc.Tools": {
       "commandName": "Project",
       "commandLineArgs": "generate -p \"LSIWebCore.csproj\"",
-      "workingDirectory": "..\\..\\..\\..\\src\\apps_release\\css\\webapp\\LSIWebCore",
+      "workingDirectory": "..\\..\\..\\..\\src\\apps\\css\\webapp\\LSIWebCore",
       "commandLineArgs_aspNetFeatureFolders": "generate -p \"..\\..\\..\\..\\..\\samples\\AspNetFeatureFolders\\AspNetFeatureFolders.csproj\"",
       "commandLineArgs_blank": "",
       "commandLineArgs2": "generate -p \"..\\..\\..\\..\\..\\samples\\AspNetSimple\\AspNetSimple.csproj\""
